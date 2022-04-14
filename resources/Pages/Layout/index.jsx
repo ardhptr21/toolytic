@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
             <header>
                 <Navbar />
             </header>
-            <main>{children}</main>
+            <main className="py-20 antialiased px-28">{children}</main>
             <footer></footer>
         </>
     );
