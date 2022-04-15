@@ -7,7 +7,7 @@ const List = ({ tools, tags }) => {
     return (
         <section className="relative flex items-start justify-between gap-10">
             <div
-                className="sticky flex flex-col items-start justify-center w-full gap-10 p-5 top-10 bg-gray-50 shadow-right-bottom"
+                className="sticky flex flex-col items-start justify-center w-full gap-10 p-5 shadow top-10 bg-gray-50"
                 style={{ flex: 0.5 }}
             >
                 <div className="w-full space-y-2">
@@ -40,7 +40,7 @@ const List = ({ tools, tags }) => {
                         <CardTool
                             key={tool.id}
                             title={tool.name}
-                            description={tool.description}
+                            description={tool.short}
                             tags={tool.tags}
                             slug={tool.slug}
                         />

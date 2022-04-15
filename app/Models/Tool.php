@@ -9,7 +9,7 @@ class Tool extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'icon', 'site_link'];
+    protected $fillable = ['name', 'short', 'description', 'video_id', 'icon', 'site_link'];
 
     public function tags()
     {

@@ -18,7 +18,8 @@ class ToolFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'description' => $this->faker->text(),
+            'short' => $this->faker->text(),
+            'description' => $this->faker->paragraph(rand(5, 10)),
             'site_link' => $this->faker->url(),
             'slug' => $this->faker->slug(),
         ];

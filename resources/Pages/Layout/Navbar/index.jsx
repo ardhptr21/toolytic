@@ -4,7 +4,7 @@ import ButtonPrimary from "../../../Components/Button/ButtonPrimary";
 
 const Navbar = () => {
     return (
-        <nav className="flex items-center justify-between w-full py-4 shadow-lg px-28">
+        <nav className="flex items-center justify-between w-full py-4 shadow px-28">
             <a href="/" className="flex items-center justify-center text-2xl">
                 <h6 className="font-bold">tool</h6>
                 <h6>ytic.io</h6>

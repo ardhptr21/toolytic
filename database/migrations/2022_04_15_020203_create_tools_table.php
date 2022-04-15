@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('short');
             $table->text('description');
+            $table->string('video_id')->nullable();
             $table->string('site_link');
             $table->string('slug')->unique();
             $table->string('icon')->nullable();
