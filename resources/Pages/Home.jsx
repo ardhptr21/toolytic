@@ -2,6 +2,7 @@ import React from "react";
 import ButtonPrimary from "../Components/Button/ButtonPrimary";
 import ButtonSecondary from "../Components/Button/ButtonSecondary";
 import { FaGithubAlt } from "react-icons/fa";
+import { Link } from "@inertiajs/inertia-react";
 
 const Home = () => {
     return (
@@ -15,7 +16,9 @@ const Home = () => {
                     for you here
                 </p>
                 <div className="flex items-start gap-5">
-                    <ButtonPrimary>Explore Tools</ButtonPrimary>
+                    <Link href="/tools">
+                        <ButtonPrimary>Explore Tools</ButtonPrimary>
+                    </Link>
                     <ButtonSecondary>
                         <FaGithubAlt size={20} />
                         Contribute

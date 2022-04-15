@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Tag;
+use App\Models\Tool;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,13 +15,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'user'])->default('user');
-            $table->timestamps();
+        Schema::create('tag_tool', function (Blueprint $table) {
+            $table->foreignIdFor(Tag::class)->constrained();
+            $table->foreignIdFor(Tool::class)->constrained();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tag_tool');
     }
 };

@@ -12,7 +12,7 @@ const Navbar = () => {
             <div>
                 <ul className="flex items-center justify-center gap-8">
                     <li>
-                        <Link className="hover:underline" href="/explore">
+                        <Link className="hover:underline" href="/tools">
                             Explore
                         </Link>
                     </li>
