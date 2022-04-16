@@ -21,4 +21,10 @@ class ToolController extends Controller
         $tool->load('tags');
         return Inertia::render('Tools/Detail', compact('tool'));
     }
+
+    public function create()
+    {
+        $tags = Tag::all();
+        return Inertia::render('Tools/Create', compact('tags'));
+    }
 }

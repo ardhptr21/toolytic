@@ -1,32 +1,20 @@
 import React from "react";
+import Select from "react-select";
 
-const Select = ({ children, className, error, note, ...props }) => {
+const CustomSelect = (props) => {
     return (
-        <div className="text-left">
-            <select
-                {...props}
-                className={`w-full px-6 py-2 border border-gray-400 rounded-full shadow-inner outline-1 outline-blue-500 ${
-                    className ? className : ""
-                }`}
-            >
-                {children}
-            </select>
-            {(error || note) && (
-                <div className="flex flex-col mt-1">
-                    {note && (
-                        <small className="text-gray-500">
-                            Note: please add @ in the end
-                        </small>
-                    )}
-                    {error && (
-                        <small className="text-red-500">
-                            *Invalid email, please provide valid email
-                        </small>
-                    )}
-                </div>
-            )}
-        </div>
+        <Select
+            styles={{
+                control: (provided, state) => ({
+                    ...provided,
+                    borderRadius: "0.75rem",
+                    padding: "0.15rem 0.75rem",
+                    border: "1px solid rgb(156 163 175)",
+                }),
+            }}
+            {...props}
+        />
     );
 };
 
-export default Select;
+export default CustomSelect;

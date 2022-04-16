@@ -7,8 +7,8 @@ import Select from "../../Components/Form/Select";
 const Register = () => {
     return (
         <section className="flex flex-col items-center justify-center gap-3">
-            <div className="p-10 text-center rounded-md shadow w-96">
-                <div className="mb-10 space-y-2">
+            <div className="p-10 rounded-md shadow w-96">
+                <div className="mb-10 space-y-2 text-center">
                     <h1 className="text-2xl font-bold">Register</h1>
                     <p className="text-gray-500">
                         Hey admin, register a new user here
@@ -23,12 +23,15 @@ const Register = () => {
                         type="email"
                         required
                     />
-                    <Select name="role">
-                        <option value="user" selected>
-                            User
-                        </option>
-                        <option value="admin">Admin</option>
-                    </Select>
+                    <Select
+                        placeholder="Select role"
+                        name="role"
+                        defaultValue={{ value: "user", label: "User" }}
+                        options={[
+                            { value: "user", label: "User", isSelected: true },
+                            { value: "admin", label: "Admin" },
+                        ]}
+                    />
                     <Input
                         placeholder="Enter password"
                         name="password"

@@ -15,8 +15,14 @@ const Login = () => {
                 </div>
 
                 <form className="space-y-5">
-                    <Input placeholder="Enter email" type="email" required />
                     <Input
+                        name="email"
+                        placeholder="Enter email"
+                        type="email"
+                        required
+                    />
+                    <Input
+                        name="password"
                         placeholder="Enter password"
                         type="password"
                         required
