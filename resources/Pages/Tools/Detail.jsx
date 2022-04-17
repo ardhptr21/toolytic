@@ -28,7 +28,7 @@ const Detail = ({ tool }) => {
                     <p>{tool.description}</p>
                 </div>
 
-                <div>
+                <div className="mt-5">
                     <h5 className="text-sm">
                         <span className="italic">Visit Website:</span>{" "}
                         <Link
@@ -65,12 +65,12 @@ const Detail = ({ tool }) => {
                             <div className="overflow-hidden rounded-md">
                                 <iframe
                                     className="w-full h-full aspect-video"
-                                    src={`https://www.youtube.com/embed/O17OWyx08Cg/${tool.video_id}`}
+                                    src={`https://www.youtube.com/embed/${tool.video_id}`}
                                     title="YouTube video player"
-                                    frameborder="0"
+                                    frameBorder={0}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
+                                    allowFullScreen
+                                />
                             </div>
                         ) : (
                             <div className="flex items-center justify-center w-full h-full border-2 border-black rounded-md bg-gray-50 aspect-video">

@@ -20,18 +20,13 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Admin',
             'email' => 'admin@toolytic.tool',
+            'role' => 'admin',
             'password' => bcrypt('admin'),
         ]);
 
-        Tool::factory(100)->create();
-        Tag::factory(10)->create();
-
-        $tags = Tag::all();
-
-        Tool::all()->each(function ($tool) use ($tags) {
-            $tool->tags()->attach(
-                $tags->random(rand(1, 3))
-            );
-        });
+        if (env('APP_ENV') === 'local') {
+            $this->call(TagsTableSeeder::class);
+            // $this->call(ToolsTableSeeder::class);
+        }
     }
 }

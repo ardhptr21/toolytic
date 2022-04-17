@@ -3,7 +3,6 @@ import Checkbox from "../../Components/Form/Checkbox";
 import CardTool from "../../Components/Card/CardTool";
 
 const List = ({ tools, tags }) => {
-    console.log(tools);
     return (
         <section className="relative flex items-start justify-between gap-10">
             <div
@@ -16,7 +15,7 @@ const List = ({ tools, tags }) => {
                 </div>
                 <div className="flex flex-col items-start justify-center gap-5">
                     {tags.map((tag) => (
-                        <Checkbox value={tag.name} name={tag.name}>
+                        <Checkbox key={tag.id} value={tag.name} name={tag.name}>
                             {tag.name}
                         </Checkbox>
                     ))}
@@ -43,6 +42,7 @@ const List = ({ tools, tags }) => {
                             description={tool.short}
                             tags={tool.tags}
                             slug={tool.slug}
+                            icon={tool.icon}
                         />
                     ))}
                 </div>

@@ -14,7 +14,7 @@ const Textarea = ({ children, className, error, note, ...props }) => {
             {(error || note) && (
                 <div className="flex flex-col mt-1">
                     {note && <small className="text-gray-500">{note}</small>}
-                    {error && <small className="text-red-500">{error}</small>}
+                    {error && <small className="text-red-500">*{error}</small>}
                 </div>
             )}
         </div>
